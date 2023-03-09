@@ -33,3 +33,20 @@ document.getElementById("cookieEnabled").innerHTML = "Cookie Enabled: "+ navigat
 document.getElementById("product").innerHTML = "Product: " + navigator.product;
 document.getElementById("onLine").innerHTML = "onLine: " + navigator.onLine;
 document.getElementById("javaEnabled").innerHTML = "Java Enabled:"+navigator.javaEnabled();
+
+function confirming(){
+    let a= confirm("Do You Agree?");
+    if (a){
+        document.getElementById("confirmMessage").innerHTML = "You have agreed."
+    } else {
+        document.getElementById("confirmMessage").innerHTML = "You have Disagreed."
+    }
+}
+function takingInput(){
+    let age =prompt("What is you age? : ","00")
+    if (age == null || age == ""){
+        document.getElementById("promptMessage").innerHTML ="You haven't given any input"
+    }else {
+        document.getElementById("promptMessage").innerHTML = "You age is: "+ age;
+    }
+}
