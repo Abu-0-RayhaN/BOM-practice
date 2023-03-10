@@ -41,8 +41,19 @@
 
 <button id="timeout"> show message in 5s</button>
 <p id="timeoutMessage"></p>
-<div id="interval" style="font-size: x-large; background-color: aqua; height: 150px; width: 200px; text-align: center; margin-left: 500px;"></div>
+<div id="interval" style="font-size: x-large; background-color: aqua; height: 150px; width: 200px; text-align: center; margin-left: 300px;"></div>
 
+<button id="stopwatch" onclick="clearInterval(settingTimeInterval)">Stop the Watch</button>
+<p id="showtime" ></p>
+
+<div><input type="button" value="Set username Cookie" onclick="setCookie('username', 'Rakib', 3)"><br>
+    <input type="button" value="Set name cookie" onclick="setCookie('name', 'sahin', 2)"><br>
+    <input type="button" value="See username" onclick="alert(getCookie('username'))"><br>
+    <input type="button" value="See name" onclick="alert(getCookie('name'))"><br>
+    <input type="button" value="Check username Cookie" onclick="checkCookie('username')"><br>
+    <input type="button" value="Check age Cookie" onclick="checkCookie('age')"><brs>
+</div>
+<br><br>
 
     <script src="index.js"></script>
     

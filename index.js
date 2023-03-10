@@ -44,7 +44,7 @@ function confirming(){
 }
 function takingInput(){
     let age =prompt("What is you age? : ","00")
-    if (age == null || age == ""){
+    if (age == null || age == "" || age == "00"){
         document.getElementById("promptMessage").innerHTML ="You haven't given any input"
     }else {
         document.getElementById("promptMessage").innerHTML = "You age is: "+ age;
@@ -53,11 +53,48 @@ function takingInput(){
 document.getElementById("timeout").addEventListener("click",()=>{
     setTimeout(()=>{
         document.getElementById("timeoutMessage").innerHTML= "I am writing this after 5seconds."
-    })
+    },5000)
 })
-setInterval(myTimer, 1000);
+let settingTimeInterval = setInterval(myTimer, 1000);
 
 function myTimer() {
   const d = new Date();
   document.getElementById("interval").innerHTML = " <br>Clock <br><br>" + d.toLocaleTimeString();
 }
+
+function setCookie(cname, cvalue, exdays){
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "Expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires; + ";path=/";
+    
+}
+
+function getCookie(cname){
+    //username=Adil; name=Rayhan; address=cumilla
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i=0; i<ca.length; i++){
+        let c= ca[i];
+        while (c.charAt(0) == " ") {
+            c = c.substring(1);
+        }
+        if ( c.indexOf(name) == 0){
+            return c.substring(name.length)
+        }
+    }
+    return " ";
+}
+
+function checkCookie(cname) {
+    let a = getCookie(cname);
+    if (a != " ") {
+     alert("Welcome again " + a);
+    } else {
+      let name = prompt("Please enter your name:", "");
+      if (name != "" && name != null) {
+        setCookie(cname, name, 3);
+      }
+    }
+  }
