@@ -50,3 +50,14 @@ function takingInput(){
         document.getElementById("promptMessage").innerHTML = "You age is: "+ age;
     }
 }
+document.getElementById("timeout").addEventListener("click",()=>{
+    setTimeout(()=>{
+        document.getElementById("timeoutMessage").innerHTML= "I am writing this after 5seconds."
+    })
+})
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("interval").innerHTML = " <br>Clock <br><br>" + d.toLocaleTimeString();
+}
